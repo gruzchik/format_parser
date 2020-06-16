@@ -1,0 +1,3 @@
+TC_USERNAME=''
+TC_PASSWORD=''
+TC_URL=''
