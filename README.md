@@ -4,13 +4,13 @@
  
 # Python script
  
- - For JSON output run json_teamcity.py
+ - For JSON output run `json_teamcity.py`
  
- - For XML output run xml_teamcity.py
+ - For XML output run `xml_teamcity.py`
  
 # Bash script
  
- - Run json_teamcity.sh for output
+ - Run `json_teamcity.sh` for output
  
  
-Both scripts uses the same configuration file
+ Both scripts uses the same configuration file
