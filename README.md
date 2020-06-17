@@ -12,4 +12,5 @@
  
  - Run json_teamcity.sh for output
  
-# Both scripts uses the same configuration file
+ 
+Both scripts uses the same configuration file
