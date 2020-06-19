@@ -2,7 +2,6 @@
 
 import json
 
-print("listing of href for non-archived(active) jobs:")
 
 with open('sample.json', mode='r') as f:
     json_data = json.load(f)
