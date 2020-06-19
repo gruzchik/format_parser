@@ -14,7 +14,7 @@ for json_dict in json_data['project']:
 
     if not 'archived' in json_dict.keys():
          #print("value = ",json_dict['href'],json_dict['archived'])
-         print(json_dict['id'], "value = ",json_dict['href'])
+         print(json_dict['id'], "href value =",json_dict['href'])
          count += 1
 
 
