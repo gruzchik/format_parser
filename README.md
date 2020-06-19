@@ -5,7 +5,7 @@
 # Python script
  
  - For JSON output run `output_teamcity_json.py`
- 
+ - For JSON output from file run `file_output_teamcity.py`
  - For XML output run `output_teamcity_xml.py`
  
 # Bash script
