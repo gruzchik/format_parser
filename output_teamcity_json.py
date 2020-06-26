@@ -27,6 +27,7 @@ for json_dict in formatted_json['project']:
 
          project_id = json_dict['href'].split('id:')[1]
          print ("id = ", project_id)
+
          activebranch_url = "http://localhost:8080/app/rest/projects/"+project_id+"/branches?locator=policy:ACTIVE_VCS_BRANCHES"
          print(activebranch_url)
 
