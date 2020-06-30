@@ -23,10 +23,11 @@ count = 0
 for json_dict in formatted_json['project']:
 
     if not 'archived' in json_dict.keys():
-         print(json_dict['id'], "value = ",json_dict['href'])
+         # output href
+         #print(json_dict['id'], "value = ",json_dict['href'])
 
          project_id = json_dict['href'].split('id:')[1]
-         print ("id = ", project_id)
+         #print ("id = ", project_id)
 
          activebranch_url = "http://localhost:8080/app/rest/projects/"+project_id+"/branches?locator=policy:ACTIVE_VCS_BRANCHES"
          print(activebranch_url)
