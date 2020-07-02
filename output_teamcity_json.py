@@ -39,7 +39,8 @@ for json_dict in formatted_json['project']:
                 # print('result = ',formatted_abranches)
                 print(activebranch_url)
                 for abranches_dict in formatted_abranches['branch']:
-                    print("Project = ",project_id,"; Active branch = ",abranches_dict['name'])
+                    abranch_output = "Project = %s; Active branch = %s" % (project_id, abranches_dict['name'])
+                    print(abranch_output)
                 print("\n")
             else:
                 print("\n")
