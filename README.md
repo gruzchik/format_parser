@@ -2,7 +2,21 @@
 
  - Rename or copy `settings_def.py` to `settings.py` and fill out parameters inside
  
-# Python script
+
+# Run Python script with docker
+
+ - clone repository to local folder
+ - build docker image from Dockerfile
+  
+ `docker build -t pp .`
+ - add current folder as a volume and run python using command
+ 
+ `docker run --rm -v $(pwd):/app pp python /app/output_teamcity_json.py`
+
+Also we can execute this using running shell file `rundocker.sh`. We have to run this file in the directory where is located Dockerfile
+
+
+# Python script locally
  
  - For JSON output run `output_teamcity_json.py`
  - For JSON output from file run `file_output_teamcity.py`
