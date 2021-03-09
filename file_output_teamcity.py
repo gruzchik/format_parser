@@ -2,7 +2,6 @@
 
 import json
 
-
 with open('sample.json', mode='r') as f:
     json_data = json.load(f)
 
@@ -36,8 +35,6 @@ for json_dict in json_data['project']:
             else:
                 print("\n")
 
-
         count += 1
-
 
 print("\n==============\n",count,"records")
