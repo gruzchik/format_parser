@@ -22,7 +22,7 @@ for json_dict in json_data['project']:
 
         activebranch_url = "http://localhost:8080/app/rest/projects/"+project_id+"/branches?locator=policy:ACTIVE_VCS_BRANCHES"
         print(activebranch_url)
-       
+
         if CONNECTION_STATUS == 1:
             get_activebranch = get(activebranch_url, auth=(TC_USERNAME, TC_PASSWORD), headers=headers)
 
