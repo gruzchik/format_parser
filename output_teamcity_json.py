@@ -3,23 +3,20 @@ import urllib.request
 import json
 import settings
 from settings import *
-
+from requests import get
 
 headers = {
     'Accept': 'application/json',
 }
 
-from requests import get
 get_data = get(TC_URL+"/app/rest/projects", auth=(TC_USERNAME, TC_PASSWORD), headers=headers)
-
-
 
 #formatted_json = json.dumps(json.loads(get_data.content), indent=4)
 formatted_json = json.loads(get_data.content)
 
 print("listing of href for non-archived(active) jobs:\n==============\n")
 
-count = 0
+COUNT = 0
 for json_dict in formatted_json['project']:
     if json_dict['id'] != '_Root':
         if not 'archived' in json_dict.keys():
@@ -30,11 +27,10 @@ for json_dict in formatted_json['project']:
             #print ("id = ", project_id)
 
             activebranch_url = TC_URL+"/app/rest/projects/"+project_id+"/branches?locator=policy:ACTIVE_VCS_BRANCHES"
-
             get_activebranch = get(activebranch_url, auth=(TC_USERNAME, TC_PASSWORD), headers=headers)
 
             formatted_abranches = json.loads(get_activebranch.content)
-            if formatted_abranches['count'] != 0:
+            if formatted_abranches['COUNT'] != 0:
                 # output json
                 # print('result = ',formatted_abranches)
                 print(activebranch_url)
@@ -44,8 +40,6 @@ for json_dict in formatted_json['project']:
                 print("\n")
             else:
                 print("\n")
+            COUNT += 1
 
-            count += 1
-
-
-print("\n==============\n",count,"records")
+print("\n==============\n",COUNT,"records")
