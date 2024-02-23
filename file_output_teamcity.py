@@ -2,7 +2,7 @@
 
 import json
 
-with open('sample.json', mode='r') as f:
+with open('sample.json', mode='r', encoding='utf-8') as f:
     json_data = json.load(f)
 
 print("listing of href for non-archived(active) jobs:\n==============\n")
