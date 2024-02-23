@@ -7,8 +7,9 @@ with open('sample.json', mode='r') as f:
 
 print("listing of href for non-archived(active) jobs:\n==============\n")
 
-count = 0
-connection_status = 0
+COUNT = 0
+CONNECTION_STATUS = 0
+
 
 for json_dict in json_data['project']:
 
@@ -22,11 +23,11 @@ for json_dict in json_data['project']:
         activebranch_url = "http://localhost:8080/app/rest/projects/"+project_id+"/branches?locator=policy:ACTIVE_VCS_BRANCHES"
         print(activebranch_url)
        
-        if connection_status == 1:
+        if CONNECTION_STATUS == 1:
             get_activebranch = get(activebranch_url, auth=(TC_USERNAME, TC_PASSWORD), headers=headers)
 
             formatted_abranches = json.loads(get_activebranch.content)
-            if formatted_abranches['count'] != 0:
+            if formatted_abranches['COUNT'] != 0:
                 # output json
                 # print('result = ',formatted_abranches)
                 for abranches_dict in formatted_abranches['branch']:
@@ -35,6 +36,6 @@ for json_dict in json_data['project']:
             else:
                 print("\n")
 
-        count += 1
+        COUNT += 1
 
-print("\n==============\n",count,"records")
+print("\n==============\n",COUNT,"records")
